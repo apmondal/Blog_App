@@ -1,0 +1,142 @@
+* {
+  font-family: sans-serif;
+}
+
+.login_form_box {
+  height: 480px;
+  width: 380px;
+  position: relative;
+  margin: 6% auto;
+  background: rgb(206, 183, 183);
+  padding: 5px;
+}
+
+.field_design {
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+
+.social_icons {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.social_icons > img {
+  width: 30px;
+  border-radius: 50%;
+  margin: 0 12px;
+  cursor: pointer;
+}
+
+.input_box {
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  left: 50px;
+  transition: .5s;
+}
+
+.input_field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+}
+
+.submit_button {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  border: 0;
+  outline: none;
+  background: rgb(0, 132, 255);
+  border-radius: 30px;
+  animation: animate 3s linear infinite;
+}
+
+.submit_button:hover {
+  background: linear-gradient(to right, #ffad06, #ff105f);
+}
+
+@keyframes animate {
+  0%{
+    background: rgb(0, 132, 255);
+  }
+  20% {
+    background: #c814ff;
+  }
+  40%{
+    background: #ff10d7;
+  }
+  60% {
+    background: #c506ff;
+  }
+  80%{
+    background: #1034ff;
+  }
+  100% {
+    background: rgb(0, 132, 255);
+  }
+}
+
+.check_box {
+  margin: 30px 10px 30px 0;
+}
+
+span {
+  color: #777;
+  font-size: 12px;
+  bottom: 68px;
+  position: absolute;
+}
+
+.below_button {
+  font-size: 12px;
+  bottom: 58px;
+  position: absolute;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.below_button1 {
+  @extend .below_button;
+  bottom: 70px;
+}
+
+.below_button2 {
+  @extend .below_button;
+  bottom: 60px;
+  display: block;
+  width: 95%;
+}
+
+.below_button2:hover {
+  text-decoration: underline;
+}
+
+.another_comp {
+  color: black;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.another_comp:hover {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.col-95 {
+  width: 95%;
+  text-align: center;
+}
