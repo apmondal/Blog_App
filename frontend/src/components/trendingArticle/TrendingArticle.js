@@ -8,7 +8,7 @@ const TrendingArticle = () => {
         <>
             <div className="trending_box">
                 <div className="articles">
-                    <Link className="title">Titlelivhsegiuvgseud rgbvuk dzygvbzdivyhebkuybveyrhvbekuyvheluyvbwelvukyhweckuvybwkeucyvwe lu</Link>
+                    <Link className="title">Title</Link>
                     <div className="author">
                         <img src="media/author.png" alt="author"/>
                         <Link className="author_name">Author Name</Link>

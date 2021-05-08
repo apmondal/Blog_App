@@ -1,12 +1,16 @@
 import "./Register.scss"
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
 import Axios from "axios";
+import { useCookies } from "react-cookie";
 
 
 const Register = () => {
 
     const url = "http://localhost:4000/api/users";
+    const history = useHistory();
+    
+    var [cookies, setCookies] = useCookies();
 
     const [data, setData] = useState({
         name: "",
@@ -14,15 +18,14 @@ const Register = () => {
         email: "",
         password: "",
         cnfpassword: "",
-        checkbox: "off"
+        checkbox: false
     })
 
     const updateValue = (event) => {
         const name = event.target.name;
-        var value = event.target.value;
+        const value = (name === "checkbox")?event.target.checked: event.target.value;
 
         setData((preValue) => {
-            if(name === "checkbox" && preValue.checkbox === "on") value = "off";
             return {
                 ...preValue,
                 [name]: value
@@ -42,7 +45,21 @@ const Register = () => {
                     password: data.password,
                     checkbox: data.checkbox
                 }
-            }).then(res => {
+            }).then(res => {const token = "Token " + res.data.user.token;
+                if(data.checkbox) {
+                    setCookies("Token", token, {
+                        expires: new Date(Date.now() + 100000000000),
+                        path: "/"
+                    });
+                }
+                else {
+                    setCookies("Token", token, {
+                        expires: new Date(Date.now() + 10000),
+                        path: "/"
+                    });
+                }
+                cookies.Token = "Token " + cookies.Token;
+                history.push("/");
                 console.log(res.data);
             }).catch(err => {
                 if(err.response.data.errors.body.length > 1) alert(err.response.data.errors.body[0] + " " + err.response.data.errors.body[1])

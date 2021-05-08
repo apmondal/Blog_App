@@ -22,6 +22,7 @@ interface UserUpdateData {
     password?: string
     bio?: string
     image?: string
+    name?: string
 }
 
 export async function createUser(data: UserSignupData): Promise<User> {
@@ -97,6 +98,7 @@ export async function updateUserDetails(data: UserUpdateData, email: string): Pr
 
     if(!user) throw new Error("No user with this email id!");
 
+    if(data.name) user.name = data.name;
     if(data.bio) user.bio = data.bio;
     if(data.image) user.image = data.image;
     if(data.username) user.username = data.username;

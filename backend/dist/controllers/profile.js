@@ -12,7 +12,9 @@ async function getProfile(username) {
         if (!user)
             throw new Error("User does not exist!");
         const profile = new User_1.User();
+        profile.name = user.name;
         profile.username = user.username;
+        profile.email = user.email;
         profile.bio = user.bio;
         profile.image = user.image;
         return profile;

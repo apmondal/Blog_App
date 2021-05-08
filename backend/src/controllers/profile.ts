@@ -13,7 +13,9 @@ export async function getProfile(username: string): Promise<User> {
 
         const profile = new User();
 
+        profile.name = user.name;
         profile.username = user.username;
+        profile.email = user.email;
         profile.bio = user.bio;
         profile.image = user.image;
 

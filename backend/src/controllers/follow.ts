@@ -130,3 +130,17 @@ export async function getFollowings(email: string): Promise<User> {
         throw err;
     }
 }
+
+export async function checkFollower(followingEmail: string, follower: string): Promise<Boolean> {
+    try {
+        const userRepo = getRepository(User);
+        const followerLink = await userRepo.findOne(followingEmail, {relations: ["follower"]});
+        const followerEmail = await userRepo.findOne({where: [{username: follower}]});
+
+        const flag =  (followerLink?.follower.find((value) => value.email === followerEmail?.email))? true: false;
+        
+        return flag;
+    } catch (err) {
+        throw err;
+    }
+}

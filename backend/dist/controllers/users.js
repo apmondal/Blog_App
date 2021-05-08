@@ -73,6 +73,8 @@ async function updateUserDetails(data, email) {
     const user = await repo.findOne(email);
     if (!user)
         throw new Error("No user with this email id!");
+    if (data.name)
+        user.name = data.name;
     if (data.bio)
         user.bio = data.bio;
     if (data.image)

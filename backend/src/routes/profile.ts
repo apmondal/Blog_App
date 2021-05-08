@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addFollow, deleteFollow, getFollowers, getFollowings } from "../controllers/follow";
+import { addFollow, checkFollower, deleteFollow, getFollowers, getFollowings } from "../controllers/follow";
 import { getProfile } from "../controllers/profile";
 import { authByToken } from "../middleware/auth";
 
@@ -49,7 +49,7 @@ route.delete("/:username/follow", authByToken, async (req, res) => {
     }
 })
 
-// get /api/user/profiles/followers    Get all follower
+// get /api/profiles/user/followers    Get all follower
 route.get("/user/followers", authByToken, async (req, res) => {
     try {
         const follow = await getFollowers((req as any).user.email);
@@ -64,12 +64,26 @@ route.get("/user/followers", authByToken, async (req, res) => {
     }
 })
 
-// get /api/user/profiles/followings    Get all followings
+// get /api/profiles/user/followings    Get all followings
 route.get("/user/followings", authByToken, async (req, res) => {
     try {
         const follow = await getFollowings((req as any).user.email);
         res.status(200).json({follow});
 
+    } catch (err) {
+        return res.status(422).json({
+            errors: {
+                body: [err.message]
+            }
+        })
+    }
+})
+
+// get /api/profiles/:username/checkfollow    Check follower
+route.get("/:username/checkfollow", authByToken, async (req, res) => {
+    try {
+        const check = await checkFollower((req as any).user.email, req.params.username);
+        res.status(200).json({check});
     } catch (err) {
         return res.status(422).json({
             errors: {

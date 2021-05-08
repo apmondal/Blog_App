@@ -1,0 +1,56 @@
+.input_articlebox {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    animation: transitionin 0.75s;
+}
+
+.create_article_form {
+    width: 100%;
+    padding: 6px;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.create_article_form > .title {
+    margin-left: 25px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.create_article_form > .title_area {
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+    margin-top: 5px;
+    margin-left: 25px;
+}
+
+.create_article_form > .description {
+    margin-left: 25px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.create_article_form > .description_area {
+    @extend .title_area;
+    width: 90%;
+    height: 200px;
+}
+
+.create_article_form > .submit_article {
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    border: 0;
+    font-size: 15px;
+    border-radius: 8px;
+    margin-top: 30px;
+    background-color: rgb(215, 215, 215);
+}

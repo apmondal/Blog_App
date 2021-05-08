@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getFollowings = exports.getFollowers = exports.deleteFollow = exports.addFollow = void 0;
+exports.checkFollower = exports.getFollowings = exports.getFollowers = exports.deleteFollow = exports.addFollow = void 0;
 const typeorm_1 = require("typeorm");
 const User_1 = require("../entities/User");
 const security_1 = require("../utils/security");
@@ -117,3 +117,16 @@ async function getFollowings(email) {
     }
 }
 exports.getFollowings = getFollowings;
+async function checkFollower(followingEmail, follower) {
+    try {
+        const userRepo = typeorm_1.getRepository(User_1.User);
+        const followerLink = await userRepo.findOne(followingEmail, { relations: ["follower"] });
+        const followerEmail = await userRepo.findOne({ where: [{ username: follower }] });
+        const flag = (followerLink === null || followerLink === void 0 ? void 0 : followerLink.follower.find((value) => value.email === (followerEmail === null || followerEmail === void 0 ? void 0 : followerEmail.email))) ? true : false;
+        return flag;
+    }
+    catch (err) {
+        throw err;
+    }
+}
+exports.checkFollower = checkFollower;

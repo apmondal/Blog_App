@@ -1,0 +1,84 @@
+.articlepage_box {
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+.articlepage_box > .title_bar {
+    width: 100%;
+    height: fit-content;
+    position: relative sticky;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: flex;
+}
+
+.articlepage_box > .title_bar > .title {
+    padding: 10px;
+    width: 75%;
+    height: fit-content;
+    font-size: 30px;
+    margin: 40px;
+    margin-bottom: 5px;
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.articlepage_box > .title_bar > .activity {
+    width: 25%;
+    margin: 30px;
+    padding: 15px;
+    position: relative;
+}
+
+.articlepage_box > .title_bar > .activity > .activity_image {
+    display: flex;
+    float: right;
+}
+
+.title_bar > .activity > .activity_image > img {
+    width: 50px;
+    height: 50px;
+    padding: 2px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.title_bar > .activity > .activity_image > .favourite {
+    margin-left: 30px;
+    height: 45px;
+}
+
+.unlike {
+    transform: scaleX(-1) scaleY(-1);
+}
+
+.articlepage_box > .title_bar > .activity > .author, .createdat, .updatedat {
+    position: relative;
+    font-size: 17px;
+    color: rgb(117, 117, 117);
+    font-weight: bold;
+    display: flex;
+    float: right;
+    margin: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    height: fit-content;
+}
+
+.articlepage_box > .description {
+    width: 95%;
+    height: fit-content;
+    position: relative;
+    padding: 10px;
+    margin: 40px;
+    margin-top: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}

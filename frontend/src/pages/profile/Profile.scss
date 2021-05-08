@@ -1,0 +1,147 @@
+.main_box {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    animation: transitionin 0.75s;
+}
+
+.profile_box {
+    width: 30%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+.profile_box > img {
+    width: 65%;
+    margin: 40px;
+    padding: 40px;
+    border-radius: 10%;
+}
+
+.profile_box > .name {
+    width: 65%;
+    text-transform: uppercase;
+    left: 80px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.profile_box > .username {
+    width: 65%;
+    position: relative;
+    left: 80px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    color: rgb(53, 53, 53);
+}
+
+.profile_box > .email {
+    width: 65%;
+    left: 80px;
+    position: relative;
+    margin-top: 15px;
+    color: rgb(95, 95, 95);
+    font-size: 15px;
+    font-style: italic;
+}
+
+.profile_box > .bio {
+    width: 65%;
+    left: 80px;
+    position: relative;
+    margin-top: 15px;
+    color: rgb(117, 117, 117);
+    font-size: 16px;
+    font-style: italic;
+}
+
+.profile_box > .edit_button {
+    width: 65%;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+.profile_box > .follow {
+    @extend .edit_button;
+    border-radius: 5px;
+}
+
+.profile_box > .hidden > .edit_profile {
+    width: 65%;
+    margin-left: 80px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.profile_box > .hidden > .edit_profile_form {
+    width: 65%;
+    margin-left: 80px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.profile_box > .hidden > .edit_profile_form > p {
+    font-size: 13px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profile_box > .hidden > .edit_profile_form > input, textarea {
+    width: 90%;
+    padding: 5px;
+}
+
+.profile_box > .hidden > .edit_profile_form > .edit_submit {
+    padding: 3px 5px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.detail_box {
+    width: 70%;
+    padding: 6px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+.profile_navbar {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.profile_navbar > p {
+    width: 33.3%;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.profile_navbar > p:hover {
+    background-color: rgb(199, 199, 199);
+    border-radius: 50px;
+    
+}
+
+.profile_navbar > p:active {
+    background-color: rgb(199, 199, 199);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 3px solid gray;
+}
+
+.content {
+    margin: 3px;
+    padding: 2px;
+    height: fit-content;
+}
